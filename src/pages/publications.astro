@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import pubs from '../content/publications/publications.json';
+
+const papers   = pubs.filter(p => p.type === 'paper' || p.type === 'preprint');
+const theses   = pubs.filter(p => p.type === 'thesis');
+const slides   = pubs.filter(p => p.type === 'slides');
+---
+
+<Layout title="Publications" description="Papers, theses, and presentations from the CAL DMRadio collaboration.">
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Research Output</span>
+      <h1>Publications &amp; Resources</h1>
+      <p class="desc">
+        Papers, theses, slide decks, and other resources from the CAL DMRadio collaboration.
+        All papers are available on arXiv.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Search -->
+      <div style="margin-bottom:2.5rem;">
+        <div class="search-wrap">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <input
+            type="search"
+            id="pub-search"
+            class="search-input"
+            placeholder="Search publications..."
+            aria-label="Search publications"
+          />
+        </div>
+      </div>
+
+      <!-- Papers -->
+      {papers.length > 0 && (
+        <div id="section-papers">
+          <span class="section-label">Journal Articles &amp; Preprints</span>
+          <h2 style="margin-bottom:1.5rem;">Papers</h2>
+          <div class="pub-list" id="papers-list">
+            {papers
+              .sort((a, b) => b.year - a.year)
+              .map(pub => (
+                <div
+                  class="pub-entry"
+                  data-search={`${pub.title} ${pub.authors.join(' ')} ${pub.journal} ${pub.year}`.toLowerCase()}
+                >
+                  <div class="pub-year">{pub.year}</div>
+                  <div class="pub-content">
+                    <div class="pub-title">
+                      {pub.title}
+                      {pub.type === 'preprint' && <span class="tag" style="margin-left:0.4rem;">Preprint</span>}
+                    </div>
+                    <div class="pub-authors">{pub.authors.join(', ')}</div>
+                    <div class="pub-venue">{pub.journal}</div>
+                    {pub.note && <div style="font-size:0.8125rem;color:var(--gray-400);margin-bottom:0.4rem;font-style:italic;">{pub.note}</div>}
+                    <div class="pub-links">
+                      {pub.url && pub.url !== 'https://arxiv.org' && (
+                        <a href={pub.url} target="_blank" rel="noopener">DOI</a>
+                      )}
+                      {pub.arxiv && pub.arxiv !== '' && !pub.arxiv.includes('XXXXX') && (
+                        <a href={`https://arxiv.org/abs/${pub.arxiv}`} target="_blank" rel="noopener">arXiv:{pub.arxiv}</a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Theses -->
+      {theses.length > 0 && (
+        <div id="section-theses" style="margin-top:3rem;">
+          <span class="section-label">Dissertations</span>
+          <h2 style="margin-bottom:1.5rem;">Theses</h2>
+          <div class="pub-list" id="theses-list">
+            {theses
+              .sort((a, b) => b.year - a.year)
+              .map(pub => (
+                <div
+                  class="pub-entry"
+                  data-search={`${pub.title} ${pub.authors.join(' ')} ${pub.year}`.toLowerCase()}
+                >
+                  <div class="pub-year">{pub.year}</div>
+                  <div class="pub-content">
+                    <div class="pub-title">{pub.title}</div>
+                    <div class="pub-authors">{pub.authors.join(', ')}</div>
+                    <div class="pub-venue">{pub.journal}</div>
+                    {pub.note && <div style="font-size:0.8125rem;color:var(--gray-400);margin-bottom:0.4rem;font-style:italic;">{pub.note}</div>}
+                    <div class="pub-links">
+                      {pub.url && pub.url !== '' && (
+                        <a href={pub.url} target="_blank" rel="noopener">Full text</a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Slides -->
+      {slides.length > 0 && (
+        <div id="section-slides" style="margin-top:3rem;">
+          <span class="section-label">Presentations</span>
+          <h2 style="margin-bottom:1.5rem;">Slides &amp; Talks</h2>
+          <div class="pub-list" id="slides-list">
+            {slides
+              .sort((a, b) => b.year - a.year)
+              .map(pub => (
+                <div
+                  class="pub-entry"
+                  data-search={`${pub.title} ${pub.authors.join(' ')} ${pub.journal} ${pub.year}`.toLowerCase()}
+                >
+                  <div class="pub-year">{pub.year}</div>
+                  <div class="pub-content">
+                    <div class="pub-title">{pub.title}</div>
+                    <div class="pub-authors">{pub.authors.join(', ')}</div>
+                    <div class="pub-venue">{pub.journal}</div>
+                    {pub.note && <div style="font-size:0.8125rem;color:var(--gray-400);margin-bottom:0.4rem;font-style:italic;">{pub.note}</div>}
+                    <div class="pub-links">
+                      {pub.url && pub.url !== '' && (
+                        <a href={pub.url} target="_blank" rel="noopener">View slides</a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      <p id="pub-empty" style="display:none;color:var(--gray-400);margin-top:2rem;">No publications match your search.</p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const input = document.getElementById('pub-search') as HTMLInputElement;
+
+  input?.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    let total = 0;
+
+    document.querySelectorAll<HTMLElement>('.pub-entry').forEach(entry => {
+      const match = !q || (entry.dataset.search ?? '').includes(q);
+      entry.style.display = match ? '' : 'none';
+      if (match) total++;
+    });
+
+    // Hide section headers if all entries in that section are hidden
+    ['papers', 'theses', 'slides'].forEach(id => {
+      const section = document.getElementById(`section-${id}`);
+      const list    = document.getElementById(`${id}-list`);
+      if (!section || !list) return;
+      const anyVisible = [...list.querySelectorAll<HTMLElement>('.pub-entry')].some(e => e.style.display !== 'none');
+      section.style.display = anyVisible ? '' : 'none';
+    });
+
+    const empty = document.getElementById('pub-empty');
+    if (empty) empty.style.display = total === 0 ? 'block' : 'none';
+  });
+</script>

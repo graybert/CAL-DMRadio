@@ -1,0 +1,60 @@
+[
+  {
+    "title": "DMRadio-m³: A Search for the QCD Axion Below 1 μeV",
+    "authors": ["DMRadio Collaboration"],
+    "journal": "Physical Review D",
+    "year": 2023,
+    "url": "https://arxiv.org",
+    "arxiv": "2301.XXXXX",
+    "type": "paper",
+    "note": "[Replace with actual DOI and arXiv ID]"
+  },
+  {
+    "title": "Searching for Axion Dark Matter with a Toroidal Pickup Coil",
+    "authors": ["D. Aybas", "J. Adam", "et al."],
+    "journal": "Physical Review Letters",
+    "year": 2022,
+    "url": "https://arxiv.org",
+    "arxiv": "2104.XXXXX",
+    "type": "paper",
+    "note": "[Replace with actual paper details]"
+  },
+  {
+    "title": "Sensitivity of the DMRadio Family of Experiments",
+    "authors": ["D.C. Aybas", "H. Bekker", "et al."],
+    "journal": "Physical Review D",
+    "year": 2021,
+    "url": "https://arxiv.org/abs/2104.09594",
+    "arxiv": "2104.09594",
+    "type": "paper"
+  },
+  {
+    "title": "Dark Photon Dark Matter with a Toroidal Detector",
+    "authors": ["DMRadio Collaboration"],
+    "journal": "Physical Review D",
+    "year": 2022,
+    "url": "https://arxiv.org",
+    "arxiv": "2203.XXXXX",
+    "type": "paper"
+  },
+  {
+    "title": "PhD Thesis: Development and Commissioning of the DMRadio Prototype",
+    "authors": ["Student Name"],
+    "journal": "UC Berkeley",
+    "year": 2024,
+    "url": "",
+    "arxiv": "",
+    "type": "thesis",
+    "note": "[Add link when published]"
+  },
+  {
+    "title": "DMRadio Status and First Results — APS April Meeting",
+    "authors": ["DMRadio Collaboration"],
+    "journal": "APS April Meeting Slides",
+    "year": 2025,
+    "url": "",
+    "arxiv": "",
+    "type": "slides",
+    "note": "[Add slide link when uploaded]"
+  }
+]

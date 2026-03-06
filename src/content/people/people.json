@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Professor Name",
+    "role": "Principal Investigator",
+    "title": "Professor of Physics, UC Berkeley",
+    "bio": "Research interests include dark matter detection, quantum sensing, and fundamental physics. [Replace with actual bio from faculty page.]",
+    "email": "pi@berkeley.edu",
+    "photo": "",
+    "website": "https://physics.berkeley.edu"
+  },
+  {
+    "name": "Postdoc Name",
+    "role": "Postdoctoral Researcher",
+    "title": "",
+    "bio": "Working on SQUID amplifier characterization and data analysis pipeline. [Replace with actual bio.]",
+    "email": "postdoc@berkeley.edu",
+    "photo": "",
+    "website": ""
+  },
+  {
+    "name": "Graduate Student One",
+    "role": "Graduate Student",
+    "title": "PhD Candidate, Physics",
+    "bio": "Thesis work on resonator design and commissioning of the DMRadio prototype. [Replace with actual bio.]",
+    "email": "gradstudent1@berkeley.edu",
+    "photo": "",
+    "website": ""
+  },
+  {
+    "name": "Graduate Student Two",
+    "role": "Graduate Student",
+    "title": "PhD Student, Physics",
+    "bio": "Working on data analysis and signal processing for axion searches. [Replace with actual bio.]",
+    "email": "gradstudent2@berkeley.edu",
+    "photo": "",
+    "website": ""
+  },
+  {
+    "name": "Undergraduate Researcher",
+    "role": "Undergraduate Researcher",
+    "title": "B.S. Physics",
+    "bio": "Contributing to hardware testing and DAQ software development. [Replace with actual bio.]",
+    "email": "",
+    "photo": "",
+    "website": ""
+  }
+]

@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import people from '../content/people/people.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const pi       = people.filter(p => p.role === 'Principal Investigator');
+const postdocs = people.filter(p => p.role === 'Postdoctoral Researcher');
+const grads    = people.filter(p => p.role === 'Graduate Student');
+const undergrads = people.filter(p => p.role === 'Undergraduate Researcher');
+const alumni   = people.filter(p => p.role === 'Alumni');
+
+const placeholder = `${base}/images/placeholder-person.svg`;
+---
+
+<Layout title="People" description="The CAL DMRadio team at UC Berkeley.">
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">The Team</span>
+      <h1>People</h1>
+      <p class="desc">
+        The CAL DMRadio collaboration spans experimental physics, quantum sensing, and
+        RF engineering. We are based at UC Berkeley with connections to partner institutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- PI -->
+  {pi.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <span class="section-label">Leadership</span>
+        <h2 style="margin-bottom:2rem;">Principal Investigator</h2>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start;">
+          {pi.map(person => (
+            <div style="display:flex;gap:2rem;align-items:flex-start;max-width:640px;">
+              <div class="person-photo" style="width:120px;height:120px;flex-shrink:0;">
+                <img
+                  src={person.photo || placeholder}
+                  alt={person.name}
+                  width="120" height="120"
+                />
+              </div>
+              <div>
+                <div class="person-name" style="font-size:1.25rem;margin-bottom:0.2rem;">{person.name}</div>
+                <div class="person-role" style="margin-bottom:0.25rem;">{person.role}</div>
+                {person.title && <div style="font-size:0.875rem;color:var(--gray-500);margin-bottom:0.75rem;">{person.title}</div>}
+                <p style="font-size:0.9375rem;line-height:1.7;">{person.bio}</p>
+                <div style="display:flex;gap:1rem;margin-top:0.75rem;flex-wrap:wrap;">
+                  {person.email && (
+                    <a href={`mailto:${person.email}`} class="person-email">{person.email}</a>
+                  )}
+                  {person.website && (
+                    <a href={person.website} target="_blank" rel="noopener" style="font-size:0.8125rem;color:var(--blue);">Website &rarr;</a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {pi.length > 0 && (postdocs.length > 0 || grads.length > 0) && <hr class="divider">}
+
+  <!-- Postdocs -->
+  {postdocs.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <span class="section-label">Research Staff</span>
+        <h2 style="margin-bottom:2rem;">Postdoctoral Researchers</h2>
+        <div class="grid-4">
+          {postdocs.map(person => (
+            <div class="card person-card">
+              <div class="person-photo">
+                <img src={person.photo || placeholder} alt={person.name} width="100" height="100" />
+              </div>
+              <div class="person-name">{person.name}</div>
+              <div class="person-role">{person.role}</div>
+              {person.title && <div style="font-size:0.8rem;color:var(--gray-400);margin-bottom:0.5rem;">{person.title}</div>}
+              <p class="person-bio">{person.bio}</p>
+              {person.email && (
+                <a href={`mailto:${person.email}`} class="person-email">{person.email}</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {postdocs.length > 0 && grads.length > 0 && <hr class="divider">}
+
+  <!-- Grad students -->
+  {grads.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <span class="section-label">Graduate Students</span>
+        <h2 style="margin-bottom:2rem;">Graduate Researchers</h2>
+        <div class="grid-4">
+          {grads.map(person => (
+            <div class="card person-card">
+              <div class="person-photo">
+                <img src={person.photo || placeholder} alt={person.name} width="100" height="100" />
+              </div>
+              <div class="person-name">{person.name}</div>
+              <div class="person-role">{person.role}</div>
+              {person.title && <div style="font-size:0.8rem;color:var(--gray-400);margin-bottom:0.5rem;">{person.title}</div>}
+              <p class="person-bio">{person.bio}</p>
+              {person.email && (
+                <a href={`mailto:${person.email}`} class="person-email">{person.email}</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {grads.length > 0 && undergrads.length > 0 && <hr class="divider">}
+
+  <!-- Undergrads -->
+  {undergrads.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <span class="section-label">Undergraduate Researchers</span>
+        <h2 style="margin-bottom:2rem;">Undergraduates</h2>
+        <div class="grid-4">
+          {undergrads.map(person => (
+            <div class="card person-card">
+              <div class="person-photo">
+                <img src={person.photo || placeholder} alt={person.name} width="100" height="100" />
+              </div>
+              <div class="person-name">{person.name}</div>
+              <div class="person-role">{person.role}</div>
+              <p class="person-bio">{person.bio}</p>
+              {person.email && (
+                <a href={`mailto:${person.email}`} class="person-email">{person.email}</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {undergrads.length > 0 && alumni.length > 0 && <hr class="divider">}
+
+  <!-- Alumni -->
+  {alumni.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <span class="section-label">Former Members</span>
+        <h2 style="margin-bottom:2rem;">Alumni</h2>
+        <div class="grid-4">
+          {alumni.map(person => (
+            <div class="card person-card" style="opacity:0.85;">
+              <div class="person-photo">
+                <img src={person.photo || placeholder} alt={person.name} width="100" height="100" />
+              </div>
+              <div class="person-name">{person.name}</div>
+              <div class="person-role" style="color:var(--gray-400);">{person.role}</div>
+              <p class="person-bio">{person.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Join CTA -->
+  <section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);">
+    <div class="container" style="text-align:center;">
+      <h3 style="margin-bottom:0.75rem;">Want to join us?</h3>
+      <p style="margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto;">
+        We have openings for motivated graduate students, postdocs, and undergraduates.
+      </p>
+      <a href={`${base}/opportunities/`} class="btn btn-primary">Research Opportunities</a>
+    </div>
+  </section>
+
+</Layout>

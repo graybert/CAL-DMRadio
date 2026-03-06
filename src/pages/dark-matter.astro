@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="Dark Matter Context"
+  description="The physics case for dark matter, axions, and why the DMRadio approach is well-motivated."
+>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Science Background</span>
+      <h1>Dark Matter &amp; Axions</h1>
+      <p class="desc">
+        The evidence for dark matter is overwhelming. The question is: what is it made of?
+        Axions and axion-like particles are among the best-motivated candidates, and DMRadio
+        targets an unexplored corner of their parameter space.
+      </p>
+    </div>
+  </section>
+
+  <!-- Evidence for DM -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-60">
+        <div>
+          <span class="section-label">The Case for Dark Matter</span>
+          <h2 style="margin-bottom:1.25rem;">What Is Dark Matter?</h2>
+          <p style="margin-bottom:1.25rem;">
+            [Replace with an overview of the observational evidence for dark matter: galactic
+            rotation curves (Rubin &amp; Ford), gravitational lensing (Bullet Cluster), large-scale
+            structure formation, and the CMB power spectrum. ~2 paragraphs.]
+          </p>
+          <p style="margin-bottom:1.25rem;">
+            [Second paragraph: the standard WIMP paradigm has been extensively searched; null results
+            from LHC and direct detection push theorists toward alternative candidates such as ultralight
+            bosons.]
+          </p>
+          <p>
+            [Third paragraph: the cosmological abundance &mdash; dark matter makes up ~27% of the
+            energy content of the Universe &mdash; motivates a broad search program spanning many decades
+            of mass and coupling.]
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="highlight-box">
+            <h4 style="margin-bottom:0.75rem;color:var(--blue);">Dark Matter by the Numbers</h4>
+            <table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+              <tr><td style="padding:0.3rem 0;color:var(--gray-500);">DM fraction of universe</td><td style="font-weight:500;color:var(--gray-900);">~27%</td></tr>
+              <tr><td style="padding:0.3rem 0;color:var(--gray-500);">Local DM density</td><td style="font-weight:500;color:var(--gray-900);">~0.3 GeV/cm&sup3;</td></tr>
+              <tr><td style="padding:0.3rem 0;color:var(--gray-500);">Velocity dispersion</td><td style="font-weight:500;color:var(--gray-900);">~220 km/s</td></tr>
+              <tr><td style="padding:0.3rem 0;color:var(--gray-500);">DM coherence time</td><td style="font-weight:500;color:var(--gray-900);">~10<sup>6</sup> / (m&middot;c&sup2;/&hbar;)</td></tr>
+            </table>
+          </div>
+          <div class="diagram-placeholder" style="aspect-ratio:1;">
+            <p><strong>Rotation curve figure</strong></p>
+            <p>Replace with galaxy rotation curve plot</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Axions -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">The Axion</span>
+      <h2 style="margin-bottom:1.25rem;">Why Axions?</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="margin-bottom:0.75rem;">The Strong CP Problem</h3>
+          <p style="margin-bottom:1rem;">
+            [Explain the strong CP problem in QCD: why the theta parameter appears in the QCD
+            Lagrangian, why it should produce an observable neutron electric dipole moment (nEDM),
+            and why the experimentally measured value is &lt;10<sup>&minus;10</sup> rather than O(1).
+            This fine-tuning problem is unnatural in the Standard Model.]
+          </p>
+          <p>
+            [Peccei-Quinn mechanism: introducing a new U(1) symmetry broken at scale f<sub>a</sub>
+            dynamically drives &theta; to zero. The pseudo-Nambu-Goldstone boson of this breaking
+            is the axion, with mass m<sub>a</sub> ~ &Lambda;<sup>2</sup><sub>QCD</sub>/f<sub>a</sub>.]
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:0.75rem;">Cosmological Production</h3>
+          <p style="margin-bottom:1rem;">
+            [Describe the misalignment mechanism for axion dark matter production. If f<sub>a</sub>
+            is large enough, the axion can account for the observed dark matter abundance. The
+            corresponding mass range is [X&ndash;Y] &mu;eV, overlapping with DMRadio's target band.]
+          </p>
+          <p>
+            [Also mention topological defect production (strings and domain walls) as an additional
+            production mechanism, and how it extends the mass range where axions could be the
+            dominant dark matter component.]
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Axion-photon coupling -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Detection Principle</span>
+      <h2 style="margin-bottom:1.25rem;">Axion-Photon Coupling</h2>
+      <div class="two-col-60">
+        <div>
+          <p style="margin-bottom:1.25rem;">
+            [Explain the axion-photon coupling g<sub>a&gamma;&gamma;</sub>. The axion couples to
+            two photons through the Lagrangian term &frac14; g<sub>a&gamma;&gamma;</sub> a F&tilde;F.
+            In the presence of a strong external magnetic field B<sub>0</sub>, this interaction
+            allows axions to resonantly convert to photons when the axion mass matches the photon
+            frequency: m<sub>a</sub>c<sup>2</sup> = &hbar;&omega;.]
+          </p>
+          <p style="margin-bottom:1.25rem;">
+            [Describe the expected signal power: P &prop; g<sup>2</sup><sub>a&gamma;&gamma;</sub>
+            &rho;<sub>DM</sub> B<sup>2</sup><sub>0</sub> V Q / m<sub>a</sub>, where V is the effective
+            volume and Q the quality factor. At DMRadio's target mass, this is an extraordinarily
+            faint signal requiring quantum-limited detection.]
+          </p>
+          <p>
+            [DFSZ and KSVZ benchmark models: these two canonical axion models predict specific values
+            of g<sub>a&gamma;&gamma;</sub>. DMRadio aims to probe at or below these thresholds across
+            its target mass range.]
+          </p>
+        </div>
+        <div>
+          <div class="diagram-placeholder">
+            <p><strong>Exclusion plot</strong></p>
+            <p>g<sub>a&gamma;&gamma;</sub> vs m<sub>a</sub></p>
+            <p style="font-size:0.8rem;margin-top:0.5rem;">Replace with sensitivity projection figure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Landscape -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Experimental Landscape</span>
+      <h2 style="margin-bottom:1.25rem;">DMRadio in Context</h2>
+      <p style="margin-bottom:2.5rem;max-width:680px;">
+        Multiple experiments are pursuing axion dark matter across complementary mass ranges.
+        DMRadio targets the sub-&mu;eV window not accessible to cavity-based haloscopes like ADMX.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">DMRadio (this experiment)</h4>
+          <p style="font-size:0.875rem;">Lumped-element toroidal resonator. Target: [X&ndash;Y] &mu;eV. Quantum-limited SQUID readout.</p>
+          <div style="margin-top:0.75rem;"><span class="tag tag-blue">Sub-&mu;eV</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">ADMX</h4>
+          <p style="font-size:0.875rem;">Microwave cavity haloscope at University of Washington. Currently covering 2&ndash;40 &mu;eV.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">&mu;eV range</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">HAYSTAC</h4>
+          <p style="font-size:0.875rem;">Yale/Berkeley/Colorado experiment. Higher-frequency cavity search with squeezed-state receiver.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">10&ndash;100 &mu;eV</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">ABRACADABRA</h4>
+          <p style="font-size:0.875rem;">MIT toroidal broadband search; demonstrated detection principle used by DMRadio.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">Sub-&mu;eV</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">CASPEr</h4>
+          <p style="font-size:0.875rem;">NMR-based axion search via axion-nucleon coupling. Complementary to photon-coupling searches.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">Ultra-low mass</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">SHAFT / AION</h4>
+          <p style="font-size:0.875rem;">Atom interferometry-based searches for ultralight dark matter and gravitational waves.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">Ultra-light</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);">
+    <div class="container" style="text-align:center;">
+      <h3 style="margin-bottom:0.75rem;">Ready to go deeper?</h3>
+      <p style="margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto;">
+        Read our publications or explore how the experiment works in detail.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href={`${base}/experiment/`} class="btn btn-primary">The Experiment</a>
+        <a href={`${base}/publications/`} class="btn btn-secondary">Publications</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

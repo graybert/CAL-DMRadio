@@ -1,0 +1,182 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="Research Opportunities"
+  description="Join the CAL DMRadio dark matter experiment. Open positions for graduate students, postdocs, and undergraduates."
+>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Join the Collaboration</span>
+      <h1>Research Opportunities</h1>
+      <p class="desc">
+        We are actively recruiting motivated researchers at all levels. Work at the
+        frontier of quantum sensing, dark matter physics, and RF engineering.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why join -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-60">
+        <div>
+          <span class="section-label">Why DMRadio</span>
+          <h2 style="margin-bottom:1.25rem;">What You'll Work On</h2>
+          <p style="margin-bottom:1.25rem;">
+            [Replace with a compelling description of the research environment: cutting-edge quantum
+            sensing technology, direct relevance to a major unsolved problem in physics, collaborative
+            team, access to Berkeley resources, etc.]
+          </p>
+          <p style="margin-bottom:1.25rem;">
+            DMRadio researchers gain hands-on experience with dilution refrigerators, SQUID amplifiers,
+            superconducting circuits, RF electronics, data analysis, and statistical methods for
+            rare-event searches.
+          </p>
+          <p>
+            [Add information about Berkeley Physics, research culture, and any fellowships or funding
+            available to new group members.]
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="info-box">
+            <h4 style="margin-bottom:0.75rem;">Skills you'll develop</h4>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+              {['Cryogenic systems & dilution refrigerators', 'SQUID amplifiers & quantum sensing', 'Superconducting resonators & RF design', 'Data analysis & statistical inference', 'Dark matter theory & phenomenology', 'Scientific writing & presentations'].map(s => (
+                <li style="display:flex;gap:0.5rem;align-items:flex-start;font-size:0.875rem;color:var(--gray-600);">
+                  <span style="color:var(--gold);font-weight:700;flex-shrink:0;">&mdash;</span> {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Open roles -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Open Positions</span>
+      <h2 style="margin-bottom:2.5rem;">Current Openings</h2>
+
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+        <!-- Postdoc -->
+        <div class="card" style="border-left:4px solid var(--blue);">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+            <div>
+              <h3 style="margin-bottom:0.25rem;">Postdoctoral Researcher</h3>
+              <span class="tag tag-blue">Open</span>
+              <span class="tag" style="margin-left:0.25rem;">Full-time</span>
+            </div>
+            <a href="mailto:pi@berkeley.edu" class="btn btn-primary" style="font-size:0.875rem;">Apply via email</a>
+          </div>
+          <p style="margin-bottom:1rem;">
+            [Describe the postdoc role: key responsibilities (e.g., lead detector commissioning,
+            SQUID characterization, data analysis), required qualifications (PhD in experimental
+            physics or related field), desired experience (cryogenics, RF, quantum sensing), and
+            expected start date.]
+          </p>
+          <p style="font-size:0.875rem;color:var(--gray-500);">
+            [Add salary range, benefits, and duration of appointment. Berkeley postdoc salary is
+            set by NIH guidelines. Appointment is typically 2 years with possibility of renewal.]
+          </p>
+        </div>
+
+        <!-- Grad student -->
+        <div class="card" style="border-left:4px solid var(--blue);">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+            <div>
+              <h3 style="margin-bottom:0.25rem;">PhD Graduate Student</h3>
+              <span class="tag tag-blue">Open</span>
+              <span class="tag" style="margin-left:0.25rem;">PhD Program</span>
+            </div>
+            <a href="https://physics.berkeley.edu/graduate/prospective-students" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.875rem;">Apply to Berkeley Physics</a>
+          </div>
+          <p style="margin-bottom:1rem;">
+            [Describe the graduate student role: thesis topics available (resonator design,
+            SQUID readout, analysis pipeline, new detector concepts), whether you are accepting
+            students for the current application cycle, and what background (undergrad physics,
+            electronics, programming) is helpful.]
+          </p>
+          <p style="font-size:0.875rem;color:var(--gray-500);">
+            Graduate students apply through the UC Berkeley Physics PhD program. Prospective students
+            are encouraged to email the PI directly with a brief description of their interests.
+          </p>
+        </div>
+
+        <!-- Undergrad -->
+        <div class="card" style="border-left:4px solid var(--gold);">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+            <div>
+              <h3 style="margin-bottom:0.25rem;">Undergraduate Researcher</h3>
+              <span class="tag tag-gold">Open (semester basis)</span>
+            </div>
+            <a href="mailto:pi@berkeley.edu" class="btn btn-secondary" style="font-size:0.875rem;">Send an email</a>
+          </div>
+          <p style="margin-bottom:1rem;">
+            [Describe undergraduate opportunities: hardware testing, software/DAQ contributions,
+            data analysis projects. Mention URAP, SURF, or other Berkeley programs that support
+            undergraduate research. Typical time commitment: 10&ndash;15 hrs/week.]
+          </p>
+          <p style="font-size:0.875rem;color:var(--gray-500);">
+            We welcome undergrads with enthusiasm for physics, some programming experience, and
+            availability of at least one semester. Credit and/or stipend may be available.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- How to apply -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <span class="section-label">How to Apply</span>
+          <h2 style="margin-bottom:1.25rem;">Getting in Touch</h2>
+          <p style="margin-bottom:1rem;">
+            For postdoc and undergraduate positions, send an email to the PI at
+            <a href="mailto:pi@berkeley.edu" style="color:var(--blue);text-decoration:underline;">pi@berkeley.edu</a>
+            with the subject line <strong>"DMRadio [Role] Application"</strong> and include:
+          </p>
+          <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
+            <li style="font-size:0.9375rem;color:var(--gray-600);">A brief statement of your research interests and why DMRadio excites you</li>
+            <li style="font-size:0.9375rem;color:var(--gray-600);">Your CV or resume</li>
+            <li style="font-size:0.9375rem;color:var(--gray-600);">Unofficial transcripts (undergrads) or publication list (postdocs)</li>
+            <li style="font-size:0.9375rem;color:var(--gray-600);">Names of 2&ndash;3 references (postdocs)</li>
+          </ol>
+          <p>
+            Graduate students should apply through the
+            <a href="https://physics.berkeley.edu/graduate/prospective-students" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;">Berkeley Physics PhD program</a>
+            and are welcome to contact the PI to express interest.
+          </p>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4 style="margin-bottom:0.75rem;color:var(--blue);">Contact</h4>
+            <p style="font-size:0.9375rem;margin-bottom:0.5rem;"><strong style="color:var(--gray-900);">Professor Name</strong></p>
+            <p style="font-size:0.875rem;color:var(--gray-500);margin-bottom:0.5rem;">Professor of Physics, UC Berkeley</p>
+            <a href="mailto:pi@berkeley.edu" style="font-size:0.875rem;color:var(--blue);">pi@berkeley.edu</a>
+            <hr style="margin:1rem 0;border:none;border-top:1px solid var(--gray-200);">
+            <p style="font-size:0.875rem;color:var(--gray-600);">
+              [Department &amp; office location]<br>
+              University of California, Berkeley<br>
+              Berkeley, CA 94720
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

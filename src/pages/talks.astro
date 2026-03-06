@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('talks');
+const now = new Date();
+
+const upcoming = all
+  .filter(t => t.data.upcoming || t.data.date >= now)
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+
+const past = all
+  .filter(t => !t.data.upcoming && t.data.date < now)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function month(d: Date) { return d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase(); }
+function day(d: Date)   { return d.getDate(); }
+function year(d: Date)  { return d.getFullYear(); }
+---
+
+<Layout title="Talks & Calendar" description="Upcoming and past talks from the CAL DMRadio collaboration.">
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Events &amp; Presentations</span>
+      <h1>Talks &amp; Calendar</h1>
+      <p class="desc">
+        Upcoming seminars, conference talks, and collaboration workshops.
+        Add a new entry by creating a Markdown file in <code>src/content/talks/</code>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Upcoming -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Upcoming</span>
+      <h2 style="margin-bottom:2rem;">Upcoming Talks</h2>
+
+      {upcoming.length === 0 ? (
+        <p style="color:var(--gray-400);">No upcoming talks scheduled. Check back soon.</p>
+      ) : (
+        <div style="border-top:1px solid var(--gray-200);">
+          {upcoming.map(talk => (
+              <div class="talk-row">
+                <div class="talk-date-box">
+                  <div class="talk-month">{month(talk.data.date)}</div>
+                  <div class="talk-day">{day(talk.data.date)}</div>
+                  <div class="talk-year">{year(talk.data.date)}</div>
+                </div>
+                <div class="talk-content" style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+                    <h4>{talk.data.title}</h4>
+                    <span class="tag tag-blue">Upcoming</span>
+                  </div>
+                  <div class="talk-meta">
+                    {talk.data.speaker} &middot; {talk.data.venue}
+                    {talk.data.location && <span> &middot; {talk.data.location}</span>}
+                  </div>
+                  {talk.data.abstract && (
+                    <p class="talk-abstract">{talk.data.abstract}</p>
+                  )}
+                  <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+                    {talk.data.slides && <a href={talk.data.slides} target="_blank" rel="noopener" style="font-size:0.8125rem;color:var(--blue);font-weight:500;">Slides &rarr;</a>}
+                    {talk.data.video  && <a href={talk.data.video}  target="_blank" rel="noopener" style="font-size:0.8125rem;color:var(--blue);font-weight:500;">Video &rarr;</a>}
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Past -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Archive</span>
+      <h2 style="margin-bottom:2rem;">Past Talks</h2>
+
+      {past.length === 0 ? (
+        <p style="color:var(--gray-400);">No past talks recorded yet.</p>
+      ) : (
+        <div style="border-top:1px solid var(--gray-200);">
+          {past.map(talk => (
+              <div class="talk-row">
+                <div class="talk-date-box">
+                  <div class="talk-month">{month(talk.data.date)}</div>
+                  <div class="talk-day">{day(talk.data.date)}</div>
+                  <div class="talk-year">{year(talk.data.date)}</div>
+                </div>
+                <div class="talk-content" style="flex:1;">
+                  <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.3rem;">
+                    <h4>{talk.data.title}</h4>
+                    <span class="tag">Past</span>
+                  </div>
+                  <div class="talk-meta">
+                    {talk.data.speaker} &middot; {talk.data.venue}
+                    {talk.data.location && <span> &middot; {talk.data.location}</span>}
+                  </div>
+                  {talk.data.abstract && (
+                    <p class="talk-abstract">{talk.data.abstract}</p>
+                  )}
+                  <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+                    {talk.data.slides && <a href={talk.data.slides} target="_blank" rel="noopener" style="font-size:0.8125rem;color:var(--blue);font-weight:500;">Slides &rarr;</a>}
+                    {talk.data.video  && <a href={talk.data.video}  target="_blank" rel="noopener" style="font-size:0.8125rem;color:var(--blue);font-weight:500;">Video &rarr;</a>}
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+</Layout>
