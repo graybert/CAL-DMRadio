@@ -10,7 +10,7 @@
     "note": "[Replace with actual DOI and arXiv ID]"
   },
   {
-    "title": "Searching for Axion Dark Matter with a Toroidal Pickup Coil",
+    "title": "Searching for Axion Dark Matter with a Solenoidal Pickup Coil",
     "authors": ["D. Aybas", "J. Adam", "et al."],
     "journal": "Physical Review Letters",
     "year": 2022,
@@ -29,7 +29,7 @@
     "type": "paper"
   },
   {
-    "title": "Dark Photon Dark Matter with a Toroidal Detector",
+    "title": "Dark Photon Dark Matter with a Solenoidal Detector",
     "authors": ["DMRadio Collaboration"],
     "journal": "Physical Review D",
     "year": 2022,
