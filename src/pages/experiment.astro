@@ -14,8 +14,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <span class="eyebrow">CAL DMRadio</span>
       <h1>The Experiment</h1>
       <p class="desc">
-        A toroidal lumped-element resonator coupled to quantum-limited SQUID amplifiers,
-        searching for the electromagnetic imprint of axion dark matter.
+        [One-sentence summary of the CAL experiment for the page header]
       </p>
     </div>
   </section>
@@ -28,18 +27,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <span class="section-label">Overview</span>
           <h2 style="margin-bottom:1.25rem;">How DMRadio Works</h2>
           <p style="margin-bottom:1.25rem;">
-            [Replace with 2&ndash;3 paragraphs from the DMRadio paper or proposal describing the
-            operating principle. Key points to cover: axion-photon conversion in a static magnetic
-            field, the pickup coil geometry, the signal chain, and why a toroidal design suppresses
-            systematic backgrounds.]
+            [How CAL converts an axion signal into a measurable current — describe the magnet, pickup coil, and axion-photon conversion mechanism]
           </p>
           <p style="margin-bottom:1.25rem;">
-            [Second paragraph: describe the LC resonator, its resonant frequency, quality factor,
-            and how tuning is achieved to scan across the target mass range.]
+            [How the LC resonator enhances the signal, what quality factor means, and how tuning scans across different axion masses]
           </p>
           <p style="margin-bottom:1.25rem;">
-            [Third paragraph: describe the SQUID-based amplifier chain, operating temperature
-            (millikelvin), and how quantum-limited or sub-quantum-limited noise is achieved.]
+            [How the SQUID amplifier chain reads out the signal and why millikelvin temperatures are needed for quantum-limited noise]
           </p>
         </div>
         <div style="display:flex;flex-direction:column;gap:1rem;">
@@ -73,25 +67,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div>
           <h3 style="margin-bottom:0.75rem;">QCD Axions</h3>
           <p style="margin-bottom:1rem;">
-            [Replace with description of the QCD axion as a dark matter candidate: the strong CP
-            problem, Peccei-Quinn symmetry, and the predicted mass-coupling relationship along the
-            DFSZ and KSVZ model lines.]
+            [Why axions are a compelling dark matter candidate — the strong CP problem and Peccei-Quinn symmetry]
           </p>
           <p>
-            DMRadio's target mass range of [X&ndash;Y] &mu;eV is motivated by [explain mass window
-            motivation: cosmological production, misalignment mechanism, etc.].
+            [What axion mass range CAL targets and why that range is physically motivated]
           </p>
         </div>
         <div>
           <h3 style="margin-bottom:0.75rem;">Dark Photons & ALPs</h3>
           <p style="margin-bottom:1rem;">
-            [Replace with description of axion-like particles (ALPs) and dark photons as additional
-            search targets. Explain how DMRadio's sensitivity extends to these candidates and what
-            parameter space it probes.]
+            [Description of axion-like particles and dark photons as additional search targets]
           </p>
           <p>
-            [Sensitivity projection: reference figure or table from the DMRadio sensitivity paper
-            (arXiv:2104.09594).]
+            [CAL's sensitivity projections across the ALP and dark photon parameter space]
           </p>
         </div>
       </div>
@@ -109,47 +97,37 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Toroidal Resonator</h3>
           <p style="font-size:0.9rem;">
-            [Describe the toroidal pickup coil geometry, its advantages for suppressing spurious
-            electromagnetic modes, the inductor-capacitor circuit, and the ferromagnetic or
-            superconducting materials used.]
+            [Description of the pickup coil geometry and the LC circuit]
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">SQUID Amplifiers</h3>
           <p style="font-size:0.9rem;">
-            [Describe the DC SQUID or rf-SQUID amplifier chain, how it couples to the resonator,
-            the achieved noise temperature, and the role of quantum squeezing in reaching sub-SQL
-            sensitivity.]
+            [Description of the SQUID amplifier chain and how it achieves quantum-limited noise]
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Cryogenic System</h3>
           <p style="font-size:0.9rem;">
-            [Describe the dilution refrigerator, operating temperature, vibration isolation, and
-            magnetic shielding. Reference the specific cryostat model and any custom hardware.]
+            [Description of the dilution refrigerator and operating temperature]
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Magnet</h3>
           <p style="font-size:0.9rem;">
-            [Describe the superconducting magnet: field strength, bore size, orientation, and
-            how it generates the static B-field required for axion-photon conversion.]
+            [Description of the superconducting magnet: field strength and how it drives axion-photon conversion]
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Data Acquisition</h3>
           <p style="font-size:0.9rem;">
-            [Describe the DAQ chain: digitizers, sampling rate, data volume, the analysis
-            pipeline, and the search algorithm used to look for the narrow axion signal
-            above the noise floor.]
+            [Description of the data acquisition chain and how axion signals are identified above the noise floor]
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Analysis Pipeline</h3>
           <p style="font-size:0.9rem;">
-            [Describe the offline analysis: power spectral density estimation, candidate
-            identification, veto procedures, and the statistical framework for setting
-            exclusion limits.]
+            [Description of the analysis pipeline for identifying candidates and setting exclusion limits]
           </p>
         </div>
       </div>
@@ -167,30 +145,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="info-box">
           <h4 style="margin-bottom:0.5rem;">Thermal Noise</h4>
           <p style="font-size:0.9rem;">
-            [Describe how Johnson-Nyquist noise from resistive elements in the circuit is
-            mitigated by operating at millikelvin temperatures and how residual noise is
-            accounted for in the analysis.]
+            [How millikelvin operation mitigates thermal noise in the detector circuit]
           </p>
         </div>
         <div class="info-box">
           <h4 style="margin-bottom:0.5rem;">Vibrational Interference</h4>
           <p style="font-size:0.9rem;">
-            [Describe mechanical vibration from the pulse tube cooler or cryostat, and the
-            isolation strategies employed (springs, dampers, separate platforms).]
+            [Sources of mechanical vibration and how they are isolated in the detector]
           </p>
         </div>
         <div class="info-box">
           <h4 style="margin-bottom:0.5rem;">RF Interference</h4>
           <p style="font-size:0.9rem;">
-            [Describe the electromagnetic shielding strategy, Faraday cage, filtering on
-            cabling, and techniques for identifying and vetoing anthropogenic RFI in the data.]
+            [RF shielding strategy and how anthropogenic interference is identified and vetoed in the data]
           </p>
         </div>
         <div class="info-box">
           <h4 style="margin-bottom:0.5rem;">Frequency Tuning</h4>
           <p style="font-size:0.9rem;">
-            [Explain how the resonant frequency is tuned to scan across the target mass range,
-            including variable capacitors, mechanical tuning, or other methods employed.]
+            [How the resonant frequency is tuned to scan across the target axion mass range]
           </p>
         </div>
       </div>
@@ -202,7 +175,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="container" style="text-align:center;">
       <h3 style="margin-bottom:0.75rem;">Want to learn more?</h3>
       <p style="margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto;">
-        Read our publications or reach out to join the collaboration.
+        [Short invitation for visitors to read publications or get in touch]
       </p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a href={`${base}/publications/`} class="btn btn-primary">Publications</a>
