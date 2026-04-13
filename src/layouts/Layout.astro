@@ -7,11 +7,11 @@ interface Props {
 }
 
 const {
-  title = 'CAL DMRadio',
-  description = 'CAL DMRadio searches for ultralight dark matter — axions and axion-like particles — using quantum-limited electromagnetic receivers at UC Berkeley.',
+  title = 'CAL-Pathfinder',
+  description = 'CAL-Pathfinder searches for ultralight dark matter — axions and axion-like particles — using quantum-limited electromagnetic receivers at UC Berkeley.',
 } = Astro.props;
 
-const pageTitle = title === 'CAL DMRadio' ? title : `${title} | CAL DMRadio`;
+const pageTitle = title === 'CAL-Pathfinder' ? title : `${title} | CAL-Pathfinder`;
 const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // '/CAL-DMRadio' or ''
 const pathname = Astro.url.pathname;
 
@@ -21,10 +21,8 @@ function isActive(path: string) {
 }
 
 const nav = [
-  { label: 'Experiment',   href: '/experiment/' },
   { label: 'Dark Matter',  href: '/dark-matter/' },
-  { label: 'People',       href: '/people/' },
-  { label: 'News',         href: '/news/' },
+  { label: 'Experiment',   href: '/experiment/' },
   { label: 'Talks',        href: '/talks/' },
   { label: 'Publications', href: '/publications/' },
 ];
@@ -50,7 +48,7 @@ const nav = [
     <!-- ── Header ── -->
     <header class="site-header">
       <nav class="nav-inner">
-        <a href={`${base}/`} class="nav-logo">CAL <span>DM</span>Radio</a>
+        <a href={`${base}/`} class="nav-logo">CAL-<span>Pathfinder</span></a>
 
         <ul class="nav-links">
           {nav.map(({ label, href, cta }) => (
@@ -89,7 +87,7 @@ const nav = [
       <div class="container">
         <div class="footer-grid">
           <div>
-            <div class="footer-brand">CAL DMRadio</div>
+            <div class="footer-brand">CAL-Pathfinder</div>
             <p class="footer-desc">
               A UC Berkeley experiment searching for ultralight dark matter using
               quantum-limited electromagnetic receivers.
@@ -104,22 +102,14 @@ const nav = [
             </ul>
           </div>
           <div>
-            <div class="footer-heading">People</div>
+            <div class="footer-heading">More</div>
             <ul class="footer-links">
-              <li><a href={`${base}/people/`}>Team</a></li>
               <li><a href={`${base}/talks/`}>Talks</a></li>
-            </ul>
-          </div>
-          <div>
-            <div class="footer-heading">News</div>
-            <ul class="footer-links">
-              <li><a href={`${base}/news/`}>News</a></li>
-              <li><a href={`${base}/talks/`}>Calendar</a></li>
             </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <span class="footer-copy">&copy; {new Date().getFullYear()} CAL DMRadio Collaboration · UC Berkeley</span>
+          <span class="footer-copy">&copy; {new Date().getFullYear()} CAL-Pathfinder Collaboration · UC Berkeley</span>
           <span class="footer-copy">Department of Physics</span>
         </div>
       </div>
