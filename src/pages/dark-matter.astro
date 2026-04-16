@@ -68,24 +68,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             background galaxies, and systems such as the Bullet Cluster
           </p>
 
-          <!-- BULLET CLUSTER IMAGE — replace src with actual composite image -->
+          <!-- BULLET CLUSTER IMAGE -->
           <figure style="margin:0.25rem 0 1.25rem;">
-            <div class="diagram-placeholder" style="aspect-ratio:16/9;">
-              <p><strong>Bullet Cluster</strong></p>
-              <p>Replace with Bullet Cluster composite image</p>
-              <p style="font-size:0.8rem;">(Chandra X-ray + Hubble optical + weak-lensing mass map)</p>
-            </div>
-            <figcaption style="font-size:0.78rem;color:var(--gray-500);margin-top:0.6rem;line-height:1.5;">
-              The Bullet Cluster (1E&nbsp;0657&minus;558): two galaxy clusters caught shortly after
-              collision. The hot X-ray-emitting gas (pink; Chandra Observatory), which comprises most
-              of the ordinary baryonic matter, has been slowed by electromagnetic interactions and
-              displaced from the collisionless galaxies. The blue contours show the dominant mass
-              concentration inferred from weak gravitational lensing&mdash;it coincides with the
-              galaxies, not the gas. This spatial offset between ordinary matter and gravitational
-              mass provides some of the most direct evidence that the bulk of matter is dark.
+            <img
+              src={`${base}/images/bullet-cluster.jpg`}
+              alt="The Bullet Cluster: X-ray-emitting gas (pink) separated from the gravitational mass inferred from lensing (blue)"
+              style="width:100%;border-radius:8px;display:block;"
+            />
+            <p style="font-size:0.9rem;margin:0.6rem 0 0.3rem;color:var(--gray-900);line-height:1.6;">
+              The Bullet Cluster is two galaxy clusters that have collided and passed through each
+              other, leaving their hot gas behind while their dark matter halos sailed through
+              unimpeded&mdash;caught in the act of separating ordinary matter from dark matter.
+            </p>
+            <figcaption style="font-size:0.75rem;color:var(--gray-500);line-height:1.5;">
+              The hot X-ray-emitting gas (pink; Chandra Observatory), which comprises most
+              of the ordinary baryonic matter, has been slowed by electromagnetic drag and
+              displaced from the collisionless dark matter. The blue regions show the dominant mass
+              concentration inferred from weak gravitational lensing&mdash;coinciding with the
+              galaxies, not the gas.
               <em>Image: X-ray: NASA/CXC/CfA/M.&nbsp;Markevitch et al.;
-              Optical: NASA/STScI; Magellan/U. Arizona/D.&nbsp;Clowe et al.;
-              Lensing map: NASA/STScI; ESO WFI; Magellan/U. Arizona/D.&nbsp;Clowe et al.</em>
+              Optical: NASA/STScI; Magellan/U.&nbsp;Arizona/D.&nbsp;Clowe et al.;
+              Lensing map: NASA/STScI; ESO WFI; Magellan/U.&nbsp;Arizona/D.&nbsp;Clowe et al.</em>
             </figcaption>
           </figure>
 
