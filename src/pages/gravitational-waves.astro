@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout
+  title="Gravitational Waves"
+  description="The physics of gravitational waves, how they are produced and detected, and their connection to fundamental physics and the CAL experimental program."
+>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Science Background</span>
+      <h1>Gravitational Waves</h1>
+      <p class="desc">
+        Gravitational waves are ripples in the fabric of spacetime, predicted by general relativity
+        and first directly detected in 2015. They open an entirely new observational window on the
+        universe&mdash;and on the early-universe physics that connects to dark matter searches.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Are GWs -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-60">
+        <div>
+          <span class="section-label">A New Astronomical Messenger</span>
+          <h2 style="margin-bottom:1.25rem;">What Are Gravitational Waves?</h2>
+
+          <p style="margin-bottom:1.25rem;">
+            Einstein's general theory of relativity (1915) predicts that accelerating masses distort
+            the geometry of spacetime and that these distortions propagate outward as waves traveling
+            at the speed of light. A passing gravitational wave alternately stretches and squeezes
+            distances in orthogonal directions&mdash;a strain h&nbsp;=&nbsp;&Delta;L/L that is
+            extraordinarily small by any terrestrial standard, typically h&nbsp;&sim;&nbsp;10<sup>&minus;21</sup>
+            even for energetic astrophysical events at cosmological distances.
+          </p>
+
+          <p style="margin-bottom:1.25rem;">
+            The first indirect evidence came in 1974, when Russell Hulse and Joseph Taylor discovered
+            a binary pulsar whose orbital period was shrinking at precisely the rate predicted by
+            energy loss to gravitational radiation&mdash;an observation recognized with the 1993 Nobel
+            Prize in Physics. Direct detection had to wait four decades: on September 14, 2015, the
+            two LIGO detectors simultaneously recorded a transient strain signal consistent with the
+            inspiral and merger of two stellar-mass black holes roughly 1.3 billion light-years away.
+            That event, GW150914, opened the era of gravitational-wave astronomy.
+          </p>
+
+          <p style="margin-bottom:0;">
+            Gravitational waves carry information inaccessible to electromagnetic observatories: they
+            pass through matter without absorption, they probe strong-field and highly dynamical
+            spacetimes, and they encode the masses, spins, and distances of compact objects with high
+            precision. Multi-messenger events&mdash;such as GW170817, a binary neutron star merger
+            observed simultaneously in gravitational waves and across the electromagnetic
+            spectrum&mdash;have already yielded independent measurements of the Hubble constant and
+            tests of Lorentz invariance.
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <figure>
+            <div class="diagram-placeholder" style="aspect-ratio:4/3;">
+              <p><strong>GW strain waveform</strong></p>
+              <p>Replace with GW150914 chirp signal</p>
+              <p style="font-size:0.8rem;margin-top:0.25rem;">Strain h(t) vs. time at H1 / L1</p>
+            </div>
+            <figcaption style="font-size:0.78rem;color:var(--gray-500);margin-top:0.6rem;line-height:1.5;text-align:center;">
+              [Replace with the strain time series from the first detected gravitational wave event
+              (GW150914), showing the characteristic inspiral chirp and merger ringdown.]
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Sources -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Astrophysical Sources</span>
+      <h2 style="margin-bottom:2rem;">What Produces Gravitational Waves?</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="margin-bottom:0.75rem;">Compact Binary Coalescences</h3>
+          <p style="margin-bottom:1rem;">
+            The dominant sources detected by ground-based interferometers are pairs of compact
+            objects&mdash;black holes (BBH), neutron stars (BNS), or mixed systems (NSBH)&mdash;that
+            inspiral due to gravitational-wave energy loss and eventually merge. The gravitational
+            wave frequency sweeps upward ("chirps") as the orbit tightens, reaching hundreds of hertz
+            at merger for stellar-mass binaries. Supermassive black hole mergers produce millihertz
+            gravitational waves accessible to the space-based LISA detector.
+          </p>
+          <h3 style="margin-bottom:0.75rem;">Continuous Waves &amp; Bursts</h3>
+          <p>
+            Rapidly rotating neutron stars with asymmetric mass distributions emit near-monochromatic
+            gravitational waves at twice their spin frequency. Core-collapse supernovae and other
+            catastrophic events produce broadband bursts. Both represent ongoing search targets for
+            advanced LIGO/Virgo/KAGRA, though no detection has yet been confirmed.
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-bottom:0.75rem;">Stochastic Gravitational Wave Background</h3>
+          <p style="margin-bottom:1rem;">
+            The incoherent superposition of gravitational waves from all unresolved sources in the
+            universe produces a stochastic background analogous to the cosmic microwave background for
+            light. Astrophysical contributions come primarily from the unresolved population of compact
+            binary mergers throughout cosmic history. Cosmological contributions&mdash;from inflation,
+            first-order phase transitions in the early universe, or networks of cosmic strings such as
+            those associated with axion-like-particle models&mdash;could carry signatures of
+            fundamental physics at energy scales far beyond collider reach.
+          </p>
+          <p>
+            Pulsar timing arrays (PTAs) recently reported evidence for a stochastic background at
+            nanohertz frequencies, consistent with a signal from supermassive black hole binaries
+            and potentially with contributions from early-universe sources. Characterizing this
+            background across the full frequency spectrum from nHz to kHz is one of the central
+            goals of next-generation GW science.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Detection principle -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Detection Principles</span>
+      <h2 style="margin-bottom:1.25rem;">How Gravitational Waves Are Detected</h2>
+      <div class="two-col-60">
+        <div>
+          <p style="margin-bottom:1.25rem;">
+            Laser interferometric detectors such as LIGO, Virgo, and KAGRA split a laser beam along
+            two perpendicular kilometer-scale arms and recombine it at a beamsplitter. A passing
+            gravitational wave differentially changes the arm lengths by h&nbsp;&times;&nbsp;L,
+            producing a phase shift detectable at the output port. State-of-the-art detectors
+            achieve strain sensitivities below 10<sup>&minus;23</sup>/&radic;Hz through a combination
+            of high circulating laser power, squeezed light injection, and suspension systems that
+            isolate the mirrors from seismic noise.
+          </p>
+          <p style="margin-bottom:1.25rem;">
+            At nanohertz frequencies, individual pulsar timing residuals serve as arms of a
+            galaxy-scale interferometer. Millisecond pulsars are extraordinarily stable clocks;
+            a stochastic gravitational wave background imprints a characteristic quadrupolar
+            correlation pattern (the Hellings-Downs curve) on timing residuals across the sky.
+            Pulsar timing arrays such as NANOGrav, EPTA, and PPTA monitor dozens of pulsars over
+            decades to detect this correlated signal.
+          </p>
+          <p>
+            [Discuss additional detection concepts: atom interferometry (AION, MAGIS, AEDGE),
+            resonant mass detectors, and proposed quantum-sensor approaches operating in frequency
+            bands between PTAs and ground-based interferometers. Connection to lumped-element
+            techniques relevant to CAL Pathfinder.]
+          </p>
+        </div>
+        <div>
+          <figure>
+            <div class="diagram-placeholder">
+              <p><strong>GW sensitivity curves</strong></p>
+              <p>Strain noise vs. frequency</p>
+              <p style="font-size:0.8rem;margin-top:0.25rem;">LIGO / LISA / ET / PTA</p>
+            </div>
+            <figcaption style="font-size:0.78rem;color:var(--gray-500);margin-top:0.6rem;line-height:1.5;text-align:center;">
+              [Replace with detector sensitivity curve comparing LIGO O4, LISA, Einstein Telescope,
+              and PTA sensitivity as a function of frequency, spanning nHz to kHz.]
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Landscape -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Experimental Landscape</span>
+      <h2 style="margin-bottom:1.25rem;">Global GW Observatories</h2>
+      <p style="margin-bottom:2.5rem;max-width:680px;">
+        Gravitational wave science spans more than twenty decades of frequency, from nanohertz
+        pulsar timing to kilohertz interferometry. No single detector covers this range; a global
+        network of complementary instruments is required.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">LIGO / Virgo / KAGRA</h4>
+          <p style="font-size:0.875rem;">Ground-based kilometer-scale laser interferometers. Currently in O4 observing run. Sensitive to 10&ndash;2000&nbsp;Hz; primary sources are stellar-mass compact binary mergers.</p>
+          <div style="margin-top:0.75rem;"><span class="tag tag-blue">10&ndash;2000 Hz</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">LISA</h4>
+          <p style="font-size:0.875rem;">ESA space-based interferometer with 2.5&nbsp;Gm arms; launch planned ~2035. Targets supermassive BH mergers, EMRIs, WD binaries, and stochastic backgrounds from early-universe phase transitions.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">0.1 mHz&ndash;1 Hz</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">Einstein Telescope &amp; Cosmic Explorer</h4>
+          <p style="font-size:0.875rem;">Next-generation ground-based detectors (10&times; LIGO sensitivity). Will observe BBH mergers throughout the observable universe and detect neutron star physics at high SNR.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">1&ndash;10&thinsp;000 Hz</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">NANOGrav / IPTA</h4>
+          <p style="font-size:0.875rem;">Pulsar timing arrays monitoring millisecond pulsars for the Hellings-Downs correlated signal. In 2023, NANOGrav, EPTA, PPTA, and CPTA reported consistent evidence for a stochastic GW background at nHz frequencies.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">1&ndash;100 nHz</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">DECIGO / BBO</h4>
+          <p style="font-size:0.875rem;">Proposed Japanese and US space-based detectors targeting the decihertz band, bridging LISA and LIGO. Would observe stellar-mass binary inspirals years before merger and potentially the inflationary GW background.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">0.1&ndash;10 Hz</span></div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:0.5rem;color:var(--blue);">Atom Interferometers (AION / MAGIS)</h4>
+          <p style="font-size:0.875rem;">Emerging class of mid-band detectors using matter-wave interferometry. Sensitive to 0.01&ndash;10&nbsp;Hz, complementary to LISA and LIGO; also probe ultralight dark matter through equivalence-principle violations.</p>
+          <div style="margin-top:0.75rem;"><span class="tag">Mid-band</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);">
+    <div class="container" style="text-align:center;">
+      <h3 style="margin-bottom:0.75rem;">Connections to CAL Pathfinder</h3>
+      <p style="margin-bottom:1.5rem;max-width:560px;margin-left:auto;margin-right:auto;">
+        Cosmological phase transitions that produce axion dark matter can also generate stochastic
+        gravitational wave backgrounds, linking CAL&rsquo;s science targets to GW phenomenology.
+        Explore the experiment or the dark matter context page.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href={`${base}/experiment/`} class="btn btn-primary">The Experiment</a>
+        <a href={`${base}/dark-matter/`} class="btn btn-secondary">Dark Matter Context</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

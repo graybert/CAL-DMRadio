@@ -27,27 +27,97 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div>
           <span class="section-label">The Case for Dark Matter</span>
           <h2 style="margin-bottom:1.25rem;">What Is Dark Matter?</h2>
+
           <p style="margin-bottom:1.25rem;">
-            [Replace with an overview of the observational evidence for dark matter: galactic
-            rotation curves (Rubin &amp; Ford), gravitational lensing (Bullet Cluster), large-scale
-            structure formation, and the CMB power spectrum. ~2 paragraphs.]
+            The first systematic evidence for missing mass came from galaxy clusters. In 1933, Fritz
+            Zwicky applied the virial theorem to velocity dispersions measured in the Coma Cluster,
+            inferring a total gravitational mass hundreds of times greater than the luminosity of its
+            member galaxies could account for. He coined the term <em>dunkle Materie</em>&mdash;dark
+            matter&mdash;to name the unseen component. Zwicky's contribution was foundational not
+            merely for what he found, but for how he found it: by decoupling mass from light, he
+            established the central method of all subsequent dark matter studies. Mass inferred from
+            gravitational dynamics is independent of whether the source emits radiation, making dark
+            matter detectable even before it is understood.
           </p>
+
           <p style="margin-bottom:1.25rem;">
-            [Second paragraph: the standard WIMP paradigm has been extensively searched; null results
-            from LHC and direct detection push theorists toward alternative candidates such as ultralight
-            bosons.]
+            The most direct kinematic evidence came from the rotation curves of spiral galaxies.
+            Through the late 1960s and 1970s, Vera C. Rubin and W. Kent Ford measured orbital
+            velocities of ionized gas and stars as a function of galactocentric radius across dozens
+            of spiral galaxies. Standard Newtonian dynamics predicts a Keplerian decline beyond the
+            edge of the luminous disk&mdash;v&nbsp;&prop;&nbsp;r<sup>&minus;&frac12;</sup>&mdash;just
+            as outer planets orbit more slowly than inner ones. Instead, Rubin and collaborators found
+            that rotation curves remain flat: orbital speeds stay roughly constant out to the largest
+            measurable radii, implying extended halos of invisible mass.
           </p>
-          <p>
-            [Third paragraph: the cosmological abundance &mdash; dark matter makes up ~27% of the
-            energy content of the Universe &mdash; motivates a broad search program spanning many decades
-            of mass and coupling.]
+
+          <p style="margin-bottom:1rem;">
+            Later observations continued to reinforce these ideas. In particular, gravitational lensing
+            made it possible to map mass directly from how gravity distorts the light of more distant
+            background galaxies, and systems such as the Bullet Cluster
+          </p>
+
+          <!-- BULLET CLUSTER IMAGE — replace src with actual composite image -->
+          <figure style="margin:0.25rem 0 1.25rem;">
+            <div class="diagram-placeholder" style="aspect-ratio:16/9;">
+              <p><strong>Bullet Cluster</strong></p>
+              <p>Replace with Bullet Cluster composite image</p>
+              <p style="font-size:0.8rem;">(Chandra X-ray + Hubble optical + weak-lensing mass map)</p>
+            </div>
+            <figcaption style="font-size:0.78rem;color:var(--gray-500);margin-top:0.6rem;line-height:1.5;">
+              The Bullet Cluster (1E&nbsp;0657&minus;558): two galaxy clusters caught shortly after
+              collision. The hot X-ray-emitting gas (pink; Chandra Observatory), which comprises most
+              of the ordinary baryonic matter, has been slowed by electromagnetic interactions and
+              displaced from the collisionless galaxies. The blue contours show the dominant mass
+              concentration inferred from weak gravitational lensing&mdash;it coincides with the
+              galaxies, not the gas. This spatial offset between ordinary matter and gravitational
+              mass provides some of the most direct evidence that the bulk of matter is dark.
+              <em>Image: X-ray: NASA/CXC/CfA/M.&nbsp;Markevitch et al.;
+              Optical: NASA/STScI; Magellan/U. Arizona/D.&nbsp;Clowe et al.;
+              Lensing map: NASA/STScI; ESO WFI; Magellan/U. Arizona/D.&nbsp;Clowe et al.</em>
+            </figcaption>
+          </figure>
+
+          <p style="margin-bottom:1.25rem;">
+            provided especially striking evidence because the hot X-ray-emitting gas, which contains
+            most of the ordinary matter, is spatially separated from the dominant gravitating mass
+            inferred from lensing. Together, these results established not merely that something is
+            &ldquo;missing,&rdquo; but that most matter in the universe is nonluminous and revealed
+            primarily through its gravitational effects. Dark matter is therefore a deeply established
+            inference from astrophysical data, even though its microscopic identity has never been
+            directly observed.
+          </p>
+
+          <p style="margin-bottom:0;">
+            Independent lines of evidence converge on the same conclusion. The acoustic peak structure
+            of the cosmic microwave background (CMB), measured with precision by WMAP and Planck,
+            encodes the relative densities of baryons, photons, and dark matter through their
+            imprint on primordial sound waves. These data establish that dark matter constitutes
+            roughly 26.8% of the total energy content of the Universe&mdash;approximately five times
+            the baryon density&mdash;and that it must be cold and effectively collisionless to
+            reproduce the observed peak heights and positions. Simulations of large-scale structure
+            formation further show that the observed cosmic web of filaments, voids, and clusters
+            could not have assembled in the available time without the gravitational scaffolding of
+            a matter component that begins clustering before ordinary matter decouples from the
+            photon bath (Bertone &amp; Hooper 2018).
           </p>
         </div>
+
         <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div class="diagram-placeholder" style="aspect-ratio:1;">
-            <p><strong>Rotation curve figure</strong></p>
-            <p>Replace with galaxy rotation curve plot</p>
-          </div>
+          <!-- VERA RUBIN ROTATION CURVE PLOT — replace with actual figure -->
+          <figure>
+            <div class="diagram-placeholder" style="aspect-ratio:1;">
+              <p><strong>Rubin, Ford &amp; Thonnard (1980)</strong></p>
+              <p>Replace with rotation curve figure</p>
+              <p style="font-size:0.8rem;margin-top:0.25rem;"><em>ApJ</em> 238, 471 &mdash; Fig.&nbsp;5</p>
+              <p style="font-size:0.78rem;">Orbital velocity vs. radius for 21 Sc spirals</p>
+            </div>
+            <figcaption style="font-size:0.78rem;color:var(--gray-500);margin-top:0.6rem;line-height:1.5;text-align:center;">
+              Rotation curves of 21 Sc spiral galaxies (Rubin, Ford &amp; Thonnard 1980). Each
+              curve remains flat to the outermost measured radius, in contrast to the Keplerian
+              decline expected if mass followed the luminous disk.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>

@@ -25,15 +25,35 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="two-col-60">
         <div>
           <span class="section-label">Overview</span>
-          <h2 style="margin-bottom:1.25rem;">How DMRadio Works</h2>
+          <h2 style="margin-bottom:1.25rem;">How Lumped-Element Detection Works</h2>
           <p style="margin-bottom:1.25rem;">
-            [How CAL converts an axion signal into a measurable current — describe the magnet, pickup coil, and axion-photon conversion mechanism]
+            In a conventional microwave cavity haloscope, the detector volume must be comparable to
+            the photon wavelength at the target axion frequency, which confines cavity-based searches
+            to axion masses above roughly 1&nbsp;&mu;eV. In the <em>lumped-element regime</em>&mdash;
+            applicable when the target wavelength far exceeds the detector size&mdash;the axion-induced
+            electromagnetic signal can instead be treated as a spatially uniform effective current
+            driving a simple LC circuit. The detector is characterized by its inductance and capacitance
+            rather than by cavity mode structure, so pickup volume and magnet volume can be scaled
+            independently of the target frequency. This opens the sub-&mu;eV mass window that cavity
+            haloscopes cannot reach.
           </p>
           <p style="margin-bottom:1.25rem;">
-            [How the LC resonator enhances the signal, what quality factor means, and how tuning scans across different axion masses]
+            An axion traversing a strong static magnetic field acquires an effective coupling to the
+            electromagnetic field, producing a faint oscillating magnetic flux in a nearby inductive
+            pickup coil. When the LC resonator is tuned so that its resonant frequency matches the
+            axion oscillation frequency (&omega;<sub>a</sub>&nbsp;=&nbsp;m<sub>a</sub>c<sup>2</sup>/&hbar;),
+            the quality factor Q enhances the axion-induced signal power relative to the thermal noise
+            floor. Scanning the resonance over time&mdash;via variable capacitors or switched
+            elements&mdash;allows the experiment to cover a continuous range of axion masses.
           </p>
           <p style="margin-bottom:1.25rem;">
-            [How the SQUID amplifier chain reads out the signal and why millikelvin temperatures are needed for quantum-limited noise]
+            CAL Pathfinder implements this concept using a solenoidal superconducting magnet, a coaxial
+            inductive pickup surrounding the field volume, and a DC SQUID amplifier chain operating
+            near 20&nbsp;mK. The SQUID provides quantum-limited noise performance essential for
+            detecting the extraordinarily faint axion-induced currents at the target sensitivity. As a
+            pathfinder instrument, CAL validates the lumped-element detection principle at scale,
+            characterizes parasitic modes and loss mechanisms in the resonator, and develops the
+            cryogenic readout hardware required for larger DMRadio-class experiments.
           </p>
         </div>
         <div style="display:flex;flex-direction:column;gap:1rem;">
