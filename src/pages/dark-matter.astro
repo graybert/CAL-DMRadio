@@ -148,28 +148,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div>
           <h3 style="margin-bottom:0.75rem;">The Strong CP Problem</h3>
           <p style="margin-bottom:1rem;">
-            [Explain the strong CP problem in QCD: why the theta parameter appears in the QCD
-            Lagrangian, why it should produce an observable neutron electric dipole moment (nEDM),
-            and why the experimentally measured value is &lt;10<sup>&minus;10</sup> rather than O(1).
-            This fine-tuning problem is unnatural in the Standard Model.]
+            One of the greatest unresolved puzzles in quantum chromodynamics, the theory of the strong force, is why the strong force does not appear to violate charge conjugation and parity symmetry, usually called CP symmetry. Charge conjugation swaps particles' electric charge, while parity reflects a process in a mirror (x,y,z-&gt;-x,-y,-x). CP symmetry means the laws of physics remain unchanged after doing both. QCD contains a theta angle that could allow this symmetry to be violated, but experiments have not found the CP-violating effects that a sizable theta angle would produce, constraining it to be less than about one part in ten billion. Peccei and Quinn proposed a way to make this smallness natural by turning the theta angle from a fixed parameter into a dynamical field. As the universe cools, that field settles toward the value where strong CP violation disappears. The axion is the particle left behind by this mechanism, making it a dark matter candidate that began as a solution to an independent problem in particle physics.
           </p>
           <p>
-            [Peccei-Quinn mechanism: introducing a new U(1) symmetry broken at scale f<sub>a</sub>
-            dynamically drives &theta; to zero. The pseudo-Nambu-Goldstone boson of this breaking
-            is the axion, with mass m<sub>a</sub> ~ &Lambda;<sup>2</sup><sub>QCD</sub>/f<sub>a</sub>.]
+            In QCD axion models, the axion mass and interaction strength are tied to the Peccei-Quinn symmetry-breaking scale. A higher symmetry-breaking scale produces a lighter, more weakly coupled axion, which is why invisible axion models such as KSVZ and DFSZ can evade ordinary particle searches while remaining theoretically motivated. These models define the QCD axion band, the region of axion parameter space where the particle would solve the strong CP problem. Axion-like particles extend the same experimental idea beyond this band. They can be light, weakly coupled, and serve as the dark matter, but they do not solve strong CP.
           </p>
         </div>
         <div>
           <h3 style="margin-bottom:0.75rem;">Cosmological Production</h3>
           <p style="margin-bottom:1rem;">
-            [Describe the misalignment mechanism for axion dark matter production. If f<sub>a</sub>
-            is large enough, the axion can account for the observed dark matter abundance. The
-            corresponding mass range is [X&ndash;Y] &mu;eV, overlapping with DMRadio's target band.]
+            Axions are compelling as dark matter because their production mechanism gives them a natural way to become cold and abundant. A dark matter candidate must be abundant enough to supply the missing mass inferred from cosmology, and it must be cold enough to clump gravitationally into galaxies and large-scale structure rather than streaming freely through the universe. When Peccei-Quinn symmetry breaks, nothing requires the axion to start at the value that will later cancel strong CP violation. Early cosmic expansion holds it nearly fixed, leaving energy stored in this initial displacement. As the universe cools and QCD effects become important, the axion begins to move toward its preferred value. It rolls, oscillates, and eventually behaves like cold matter on cosmic scales.
+          </p>
+          <p style="margin-bottom:1rem;">
+            This origin is different from the production of ordinary particles in a hot thermal bath. The axions that make up the dark matter are not produced through frequent collisions with Standard Model particles. They arise from the collective motion of a field that was already present in the early universe, so even extremely light axions can contribute mass gravitationally without behaving like hot radiation.
           </p>
           <p>
-            [Also mention topological defect production (strings and domain walls) as an additional
-            production mechanism, and how it extends the mass range where axions could be the
-            dominant dark matter component.]
+            The details depend on when Peccei-Quinn symmetry breaks relative to inflation. If it breaks after inflation, different regions of the universe begin with different axion values, creating a cosmic patchwork. Boundaries between mismatched regions can form string-like and wall-like defects, whose later decay adds axions to the population produced by misalignment. If the symmetry breaks before or during inflation and is not restored afterward, inflation stretches one initial axion value across the observable universe, removing this visible patchwork but making the abundance depend on that single starting value. This pre-inflationary picture is especially important for very light, high-scale axions. In that regime, the axion wavelength is larger than the detector itself, which is precisely the condition that allows CAL and DMRadio to search for the coherent field with a lumped-element circuit instead of a wavelength-sized microwave cavity.
           </p>
         </div>
       </div>
@@ -186,22 +180,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="two-col-60">
         <div>
           <p style="margin-bottom:1.25rem;">
-            [Explain the axion-photon coupling g<sub>a&gamma;&gamma;</sub>. The axion couples to
-            two photons through the Lagrangian term &frac14; g<sub>a&gamma;&gamma;</sub> a F&tilde;F.
-            In the presence of a strong external magnetic field B<sub>0</sub>, this interaction
-            allows axions to resonantly convert to photons when the axion mass matches the photon
-            frequency: m<sub>a</sub>c<sup>2</sup> = &hbar;&omega;.]
+            The axion-photon coupling gives experiments a way to search for a particle that otherwise barely interacts with ordinary matter. An axion will not leave a charged track in a detector, but a strong magnetic field can convert part of the axion field into an electromagnetic response. This conversion is known as the inverse Primakoff effect, and it is the reason magnets are central to many axion searches.
           </p>
           <p style="margin-bottom:1.25rem;">
-            [Describe the expected signal power: P &prop; g<sup>2</sup><sub>a&gamma;&gamma;</sub>
-            &rho;<sub>DM</sub> B<sup>2</sup><sub>0</sub> V Q / m<sub>a</sub>, where V is the effective
-            volume and Q the quality factor. At DMRadio's target mass, this is an extraordinarily
-            faint signal requiring quantum-limited detection.]
+            The coupling is often summarized by a term proportional to a&nbsp;&mathbf{E}&middot;&mathbf{B}, linking the axion field to electric and magnetic fields. For dark matter axions, the signal is better understood as a wave passing through the laboratory than as a sequence of individual collisions. Because the axions are extremely light and numerous, the local dark matter field oscillates coherently. When that field overlaps with a static magnetic field, the axion-photon interaction makes the detector behave as though a tiny alternating current is flowing along the magnetic field lines. That effective current produces a real electromagnetic signal whose frequency is set by the axion mass.
+          </p>
+          <p style="margin-bottom:1.25rem;">
+            The appropriate detector design changes with the axion mass. At higher masses, microwave cavity haloscopes can enhance the signal when a cavity mode matches the axion frequency. At lower masses, the axion wavelength becomes too large for a practical cavity. Lumped-element detectors avoid this scaling problem by treating the experiment as an electrical circuit. The axion-induced response couples into a pickup structure, a resonant LC circuit enhances the chosen frequency, and a SQUID or other quantum sensor reads out the tiny current or magnetic flux.
           </p>
           <p>
-            [DFSZ and KSVZ benchmark models: these two canonical axion models predict specific values
-            of g<sub>a&gamma;&gamma;</sub>. DMRadio aims to probe at or below these thresholds across
-            its target mass range.]
+            CAL and DMRadio apply this low-mass strategy in a solenoidal geometry, where the axion-induced response is coupled into a pickup and measured with sensitive quantum electronics. These experiments target the low-mass region where the axion can behave as a coherent wave and where larger instruments can move toward the QCD axion band.
           </p>
         </div>
         <div>
@@ -257,6 +245,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <p style="font-size:0.875rem;">Atom interferometry-based searches for ultralight dark matter and gravitational waves.</p>
           <div style="margin-top:0.75rem;"><span class="tag">Ultra-light</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- References -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">References</span>
+      <h2 style="margin-bottom:1.5rem;">Sources</h2>
+      <div style="max-width:800px;">
+        <ol style="font-size:0.9rem;line-height:1.8;color:var(--gray-700);padding-left:1.5rem;">
+          <li style="margin-bottom:0.75rem;">
+            Chiara Salemi's Thesis paper
+          </li>
+          <li>
+            History of dark matter paper
+          </li>
+        </ol>
       </div>
     </div>
   </section>
