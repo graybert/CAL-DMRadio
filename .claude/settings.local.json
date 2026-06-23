@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(git log:*)",
+      "Bash(git reset:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate README with comprehensive guide and switch deployment to main branch\n\n- Add detailed README for team: setup instructions, editing guide, troubleshooting\n- Update GitHub Actions workflow to deploy from main branch instead of template\n- Main branch now has all latest content \\(dark matter, GW, experiment pages\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth:*)",
+      "Bash(git fetch:*)",
+      "Bash(gh run list:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd hardware descriptions and references to experiment page\n\n- Fill in all 6 hardware section descriptions \\(Coaxial Resonator, SQUID Amplifiers, Cryogenic System, Magnet, Data Acquisition, Analysis Pipeline\\)\n- Add References section with sources from NSF proposal, APS presentation, and arXiv preprint\n- Content sourced from scrubbed_Final NSF 45435 Salemi, CAL_APS2026_Engelhardt.pdf, and arXiv:2504.20398v1\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "WebSearch"
+    ]
+  }
+}
