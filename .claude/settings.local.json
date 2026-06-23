@@ -15,7 +15,9 @@
       "Bash(gh run list:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd hardware descriptions and references to experiment page\n\n- Fill in all 6 hardware section descriptions \\(Coaxial Resonator, SQUID Amplifiers, Cryogenic System, Magnet, Data Acquisition, Analysis Pipeline\\)\n- Add References section with sources from NSF proposal, APS presentation, and arXiv preprint\n- Content sourced from scrubbed_Final NSF 45435 Salemi, CAL_APS2026_Engelhardt.pdf, and arXiv:2504.20398v1\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(gh run view:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }
