@@ -14,17 +14,57 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <span class="eyebrow">CAL-Pathfinder</span>
       <h1>The Experiment</h1>
       <p class="desc">
-        [One-sentence summary of the CAL experiment for the page header]
+        Developing and characterizing the lumped-element technology for next-generation axion dark matter searches.
       </p>
     </div>
   </section>
 
-  <!-- Overview -->
+  <!-- What is DMRadio -->
   <section class="section">
     <div class="container">
       <div class="two-col-60">
         <div>
-          <span class="section-label">Overview</span>
+          <span class="section-label">The DMRadio Program</span>
+          <h2 style="margin-bottom:1.25rem;">What is DMRadio?</h2>
+          <p style="margin-bottom:1.25rem;">
+            DMRadio is a resonant search for axion dark matter in the sub-&mu;eV mass range. In a strong static magnetic field, the axion-photon coupling modifies Maxwell's equations and produces a tiny effective oscillating current, which DMRadio detects with a coaxial inductive pickup coupled to a tunable LC resonator and a DC SQUID readout chain. Because the targeted axion masses correspond to wavelengths much larger than the detector, the apparatus operates in the lumped-element regime rather than as a conventional cavity haloscope.
+          </p>
+          <p style="margin-bottom:0;">
+            Resonant tuning enhances the axion-induced response at a chosen frequency, and scanning that resonance over time allows the experiment to probe a range of possible axion masses. Achieving sensitivity to such weak signals requires high quality factor, careful control of parasitic modes and detector losses, cryogenic operation near 20 mK, and low-noise SQUID amplification.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- What is CAL-DMRadio -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-60">
+        <div>
+          <span class="section-label">CAL's Role</span>
+          <h2 style="margin-bottom:1.25rem;">What is CAL-DMRadio?</h2>
+          <p style="margin-bottom:1.25rem;">
+            The Cal Axion LC (CAL) experiment develops and characterizes the coaxial pickup and tunable LC resonator architecture used in DMRadio's lumped-element axion search. In this design, the coaxial pickup converts the axion-induced electromagnetic response into a measurable circuit signal, while the tunable LC resonator sets the resonant frequency and provides the narrowband enhancement needed for sensitive readout.
+          </p>
+          <p style="margin-bottom:0;">
+            Characterization means measuring not only where the device resonates, but how sharply it resonates, how smoothly it tunes, and whether its electromagnetic field structure matches the intended mode. In practice, this is done through resonance-curve measurements, tuning studies, comparison to simulation, and bead-pull measurements, in which a small perturbing bead is moved through the structure to map the field distribution by tracking shifts in resonant frequency. Together, these measurements reveal distortions, parasitic modes, and other non-ideal effects that determine whether the coaxial resonator is suitable for a precision axion search.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- How Lumped-Element Works -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-60">
+        <div>
+          <span class="section-label">Detection Principle</span>
           <h2 style="margin-bottom:1.25rem;">How Lumped-Element Detection Works</h2>
           <p style="margin-bottom:1.25rem;">
             In a conventional microwave cavity haloscope, the detector volume must be comparable to
