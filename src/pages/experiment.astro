@@ -77,39 +77,62 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Coaxial Resonator</h3>
           <p style="font-size:0.9rem;">
-            [Description of the pickup coil geometry and the LC circuit]
+            The axion signal acts as an effective current source that is inductively coupled to the LC resonator, which is tuned to the axion mass via a tunable capacitor. The tunability of the resonator allows us to search over a broader frequency range.
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">SQUID Amplifiers</h3>
           <p style="font-size:0.9rem;">
-            [Description of the SQUID amplifier chain and how it achieves quantum-limited noise]
+            The amplifier chain consists of a first stage single dc SQUID, followed by a strongly coupled second stage SQUID array and a cryogenic follow-on RF amplifier. With this system, we can achieve a noise performance that is only a factor of 10-20 above the SQL (Standard Quantum Limit) at the frequencies we are interested in here.
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Cryogenic System</h3>
           <p style="font-size:0.9rem;">
-            [Description of the dilution refrigerator and operating temperature]
+            The CAL experiment will be housed in a Bluefors LD400 dilution refrigerator. The fridge will also be equipped with a 9T solenoidal magnet from American Magnetics, Inc., which is designed to mate with the plates of the LD400 and share vacuum and cryocooling. The targeted system temperature for CAL Pathfinder is 20mK.
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Magnet</h3>
           <p style="font-size:0.9rem;">
-            [Description of the superconducting magnet: field strength and how it drives axion-photon conversion]
+            CAL Pathfinder utilizes a solenoid for lumped element detection, this magnet is 9T and will be thermalized at 4K, in the dilution fridge. Axion-photon conversion is driven by the inverse primakoff effect, in which axions are converted to photons and an axion B-field is generated, the quantity we wish to detect.
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Data Acquisition</h3>
           <p style="font-size:0.9rem;">
-            [Description of the data acquisition chain and how axion signals are identified above the noise floor]
+            The data will be acquired using a modified version of the 'DMRadio Sequencer' code base that synchronizes the data acquisition, frequency tuning, calibrations, and SQUID biasing. The code will need to be adapted to a new digitizer card with the higher sampling rate needed to reach our goal frequency range.
           </p>
         </div>
         <div class="card">
           <h3 style="margin-bottom:0.75rem;color:var(--blue);">Analysis Pipeline</h3>
           <p style="font-size:0.9rem;">
-            [Description of the analysis pipeline for identifying candidates and setting exclusion limits]
+            The analysis is based on a frequentist log-likelihood approach. We are presently adapting this analysis method to a resonant search for DMRadio-50 L, including updated vetoes, blinding via fake axion injection, and rescan procedures; the DMRadio-50 L analysis pipeline will be used as the foundation to build the analysis for the CAL experiment.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- References -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">References</span>
+      <h2 style="margin-bottom:1.5rem;">Sources</h2>
+      <div style="max-width:800px;">
+        <ol style="font-size:0.9rem;line-height:1.8;color:var(--gray-700);padding-left:1.5rem;">
+          <li style="margin-bottom:0.75rem;">
+            "scrubbed_Final NSF 45435 Salemi (1)" — Located in the Google Drive under: SalemiGroup &gt; CAL &gt; proposals
+          </li>
+          <li style="margin-bottom:0.75rem;">
+            "CAL_APS2026_Engelhardt.pdf" — <a href="https://commons.lbl.gov/spaces/CAL/pages/383190220/Past+Conference+Contributions?preview=/383190220/383190219/CAL_APS2026_Engelhardt.pdf" style="color:var(--blue);text-decoration:none;" target="_blank" rel="noopener">LBL Commons</a>
+          </li>
+          <li>
+            arXiv preprint — <a href="https://arxiv.org/html/2504.20398v1#S2" style="color:var(--blue);text-decoration:none;" target="_blank" rel="noopener">arXiv:2504.20398v1</a>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
