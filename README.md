@@ -6,11 +6,14 @@ Official website for the CAL-Pathfinder dark matter experiment at UC Berkeley.
 
 Built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
+> **📝 Want to edit manually?** Check out the [Manual Editing Guide](#manual-editing-guide) for detailed instructions on formatting, adding sections, images, and more — no AI required!
+
 ---
 
 ## Table of Contents
 - [Quick Start](#quick-start)
 - [Editing Main Pages](#editing-main-pages)
+- [Manual Editing Guide](#manual-editing-guide) ⭐ **Detailed formatting & section guide**
 - [Adding Content](#adding-content-news-talks-publications)
 - [Deployment](#deployment)
 - [Project Structure](#project-structure)
@@ -118,6 +121,447 @@ The main science pages live in `src/pages/`. These are `.astro` files that mix H
    ```html
    <img src={`${base}/images/your-image.jpg`} alt="Description" />
    ```
+
+---
+
+## Manual Editing Guide
+
+This section explains how to edit the site structure, add sections, and format content **without using Claude**.
+
+### Understanding the Page Structure
+
+All main pages follow this pattern:
+```html
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Page Title" description="Meta description for SEO">
+  <!-- Page content goes here -->
+</Layout>
+```
+
+**Don't touch the first 4 lines** (the code between `---` markers) or the `<Layout>` tags — just edit what's inside.
+
+---
+
+### How to Add a New Section
+
+Sections are the main content blocks on each page. Here's the basic template:
+
+```html
+<section class="section">
+  <div class="container">
+    <span class="section-label">Label Text</span>
+    <h2>Section Heading</h2>
+    <p>
+      Your content here. You can use multiple paragraphs.
+    </p>
+  </div>
+</section>
+```
+
+**To add a section divider** (horizontal line) between sections:
+```html
+<hr class="divider">
+```
+
+**Example: Adding a new "Collaborations" section**
+
+Find where you want to insert it, then add:
+```html
+<hr class="divider">
+
+<section class="section">
+  <div class="container">
+    <span class="section-label">Partnerships</span>
+    <h2>Our Collaborators</h2>
+    <p>
+      We work with institutions worldwide including...
+    </p>
+  </div>
+</section>
+```
+
+---
+
+### Layout Options: How to Organize Content
+
+#### Single Column (default)
+Just put your content directly in the container:
+```html
+<section class="section">
+  <div class="container">
+    <h2>Title</h2>
+    <p>Full-width content</p>
+  </div>
+</section>
+```
+
+#### Two Columns (equal width)
+```html
+<section class="section">
+  <div class="container">
+    <h2>Title</h2>
+    <div class="two-col">
+      <div>
+        <h3>Left Column</h3>
+        <p>Content for left side</p>
+      </div>
+      <div>
+        <h3>Right Column</h3>
+        <p>Content for right side</p>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+#### Two Columns (60/40 split)
+Use `two-col-60` for a wider left column:
+```html
+<div class="two-col-60">
+  <div>
+    <p>Main content (takes 60% width)</p>
+  </div>
+  <div>
+    <p>Sidebar content (takes 40% width)</p>
+  </div>
+</div>
+```
+
+#### Grid Layout (for cards)
+Use grids to display multiple items in rows:
+
+**3-column grid:**
+```html
+<div class="grid-3">
+  <div class="card">
+    <h3>Card 1</h3>
+    <p>Content</p>
+  </div>
+  <div class="card">
+    <h3>Card 2</h3>
+    <p>Content</p>
+  </div>
+  <div class="card">
+    <h3>Card 3</h3>
+    <p>Content</p>
+  </div>
+</div>
+```
+
+Available grid classes: `grid-2`, `grid-3`, `grid-4`
+
+---
+
+### How to Add Images
+
+#### Basic Image
+```html
+<img
+  src={`${base}/images/your-image.jpg`}
+  alt="Describe the image for accessibility"
+  style="width:100%;border-radius:8px;"
+/>
+```
+
+#### Image with Caption (Figure)
+```html
+<figure style="margin:1.5rem 0;">
+  <img
+    src={`${base}/images/your-image.jpg`}
+    alt="Brief description"
+    style="width:100%;border-radius:8px;"
+  />
+  <figcaption style="font-size:0.875rem;color:var(--gray-500);margin-top:0.75rem;line-height:1.5;">
+    Image caption explaining what's shown. Credit: Source Name
+  </figcaption>
+</figure>
+```
+
+#### Image in a Two-Column Layout (text + image)
+```html
+<div class="two-col-60">
+  <div>
+    <h2>Main Content</h2>
+    <p>Text goes here on the left</p>
+  </div>
+  <div>
+    <img src={`${base}/images/diagram.png`} alt="Diagram description" />
+  </div>
+</div>
+```
+
+#### Placeholder for Future Images
+```html
+<div class="diagram-placeholder">
+  <p><strong>Plot Title</strong></p>
+  <p>Replace this with actual figure</p>
+</div>
+```
+
+**Image file checklist:**
+1. Place file in `public/images/` folder
+2. Use lowercase filenames with hyphens: `bullet-cluster.jpg` (not `Bullet Cluster.JPG`)
+3. Keep file sizes reasonable (< 2MB for photos)
+4. Reference with: `{$base}/images/filename.jpg` (always include `${base}`)
+
+---
+
+### Common Formatting
+
+#### Text Formatting
+```html
+<strong>Bold text</strong>
+<em>Italic text</em>
+<code>inline code</code>
+```
+
+#### Subscript and Superscript (for math)
+```html
+m<sub>a</sub>          <!-- shows as: mₐ -->
+c<sup>2</sup>          <!-- shows as: c² -->
+&omega;<sub>a</sub>    <!-- shows as: ωₐ -->
+```
+
+#### Links
+```html
+<!-- External link -->
+<a href="https://example.com" target="_blank" rel="noopener">Link text</a>
+
+<!-- Internal link to another page -->
+<a href={`${base}/experiment/`}>The Experiment</a>
+```
+
+#### Lists
+```html
+<!-- Unordered list -->
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+</ul>
+
+<!-- Ordered list -->
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+</ol>
+```
+
+#### Special Characters
+Common symbols you can copy-paste or use HTML codes:
+- `&mu;` = μ (micro)
+- `&omega;` = ω (omega)
+- `&gamma;` = γ (gamma)
+- `&alpha;` = α (alpha)
+- `&beta;` = β (beta)
+- `&ndash;` = – (en dash)
+- `&mdash;` = — (em dash)
+- `&nbsp;` = non-breaking space (prevents line break)
+- `&middot;` = · (middle dot)
+- `&hbar;` = ℏ (h-bar)
+
+---
+
+### Color and Style Reference
+
+Available color variables (use in `style="color:var(--name)"`):
+- `--blue` = Berkeley Blue (#003262)
+- `--gold` = Cal Gold (#FDB515)
+- `--gray-900` = Dark text
+- `--gray-600` = Body text (default)
+- `--gray-500` = Subtle text
+- `--gray-200` = Borders
+- `--gray-50` = Light backgrounds
+
+#### Inline Styling Examples
+```html
+<!-- Change text color -->
+<p style="color:var(--blue);">Blue text</p>
+
+<!-- Add spacing -->
+<p style="margin-bottom:1.5rem;">Paragraph with bottom margin</p>
+
+<!-- Max width for readability -->
+<p style="max-width:600px;">
+  Constrained text width for long paragraphs
+</p>
+
+<!-- Custom background section -->
+<section class="section" style="background:var(--gray-50);">
+  ...
+</section>
+```
+
+---
+
+### Pre-Built Components
+
+#### Cards
+```html
+<div class="card">
+  <h3>Card Title</h3>
+  <p>Card content. Cards have borders, padding, and hover effects.</p>
+</div>
+```
+
+#### Buttons
+```html
+<!-- Primary button (blue) -->
+<a href={`${base}/page/`} class="btn btn-primary">Click Me</a>
+
+<!-- Secondary button (outline) -->
+<a href={`${base}/page/`} class="btn btn-secondary">Learn More</a>
+```
+
+#### Labels/Tags
+```html
+<span class="section-label">Small Label</span>
+<span class="eyebrow">UPPERCASE LABEL</span>
+<span class="tag">tag</span>
+<span class="tag tag-blue">Blue Tag</span>
+```
+
+#### Call-to-Action Section
+```html
+<section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);">
+  <div class="container" style="text-align:center;">
+    <h3 style="margin-bottom:0.75rem;">CTA Heading</h3>
+    <p style="margin-bottom:1.5rem;">Short description</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href={`${base}/publications/`} class="btn btn-primary">Publications</a>
+      <a href={`${base}/experiment/`} class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+```
+
+---
+
+### Page Templates
+
+#### Typical Science Page Structure
+```html
+<Layout title="Page Title" description="SEO description">
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Category</span>
+      <h1>Page Title</h1>
+      <p class="desc">Brief introduction paragraph</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Section Label</span>
+      <h2>Section Heading</h2>
+      <p>Content here</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Another Section -->
+  <section class="section">
+    <div class="container">
+      <h2>Another Topic</h2>
+      <div class="two-col">
+        <div><p>Left column</p></div>
+        <div><p>Right column</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);">
+    <div class="container" style="text-align:center;">
+      <h3>Want to learn more?</h3>
+      <a href={`${base}/publications/`} class="btn btn-primary">Publications</a>
+    </div>
+  </section>
+
+</Layout>
+```
+
+---
+
+### Tips for Editing
+
+**Do:**
+- Save often and check `http://localhost:4321/CAL-DMRadio/` in your browser
+- Copy existing sections and modify them (easier than starting from scratch)
+- Use consistent spacing: `margin-bottom:1.25rem;` between paragraphs
+- Keep HTML structure intact (don't delete closing tags)
+
+**Don't:**
+- Don't edit the `---` code section at the top of .astro files
+- Don't remove the `${base}` part from image/link paths
+- Don't delete the `Layout` wrapper tags
+- Don't use `class="..."` inside inline styles (choose one or the other)
+
+**Common Mistakes:**
+```html
+<!-- ❌ Wrong: missing ${base} -->
+<img src="/images/photo.jpg" alt="...">
+
+<!-- ✅ Correct -->
+<img src={`${base}/images/photo.jpg`} alt="...">
+
+<!-- ❌ Wrong: mixing class and inline color -->
+<p class="card" style="color:var(--blue);">text</p>
+
+<!-- ✅ Correct: use one approach -->
+<p style="color:var(--blue);">text</p>
+
+<!-- ❌ Wrong: unclosed tag -->
+<div class="container">
+  <p>Content
+</div>
+
+<!-- ✅ Correct -->
+<div class="container">
+  <p>Content</p>
+</div>
+```
+
+---
+
+### Real Example: Adding a "Team Photo" Section
+
+Let's say you want to add a team photo section to `experiment.astro`.
+
+1. **Add your photo** to `public/images/team-photo.jpg`
+
+2. **Find where to insert** (e.g., before the "References" section)
+
+3. **Add this code:**
+```html
+<hr class="divider">
+
+<section class="section">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">Our Team</span>
+    <h2 style="margin-bottom:2rem;">The CAL Collaboration</h2>
+    <figure style="max-width:900px;margin:0 auto;">
+      <img
+        src={`${base}/images/team-photo.jpg`}
+        alt="CAL team members in the lab"
+        style="width:100%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);"
+      />
+      <figcaption style="font-size:0.9rem;color:var(--gray-500);margin-top:1rem;">
+        The CAL-Pathfinder team at UC Berkeley, Spring 2025
+      </figcaption>
+    </figure>
+  </div>
+</section>
+```
+
+4. **Save and check** your local dev server — you'll see the new section immediately!
 
 ---
 
